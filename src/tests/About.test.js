@@ -7,6 +7,7 @@ describe('Testa o componente About', () => {
   test('Testa o h2 about pokédex', () => {
     const { history } = renderWithRouter(<App />);
     history.push('/about');
+
     const aboutHeading = screen
       .getByRole('heading', { level: 2, name: /about pokédex/i });
     expect(aboutHeading).toBeInTheDocument();
@@ -15,6 +16,7 @@ describe('Testa o componente About', () => {
   test('Testa a src da imagem', () => {
     const { history } = renderWithRouter(<App />);
     history.push('/about');
+
     const image = screen.getByRole('img');
     expect(image).toHaveAttribute('src', 'https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png');
   });
